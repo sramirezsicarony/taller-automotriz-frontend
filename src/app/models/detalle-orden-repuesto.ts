@@ -15,3 +15,28 @@ export interface DetalleOrdenRepuestoCreatePayload {
   cantidad: number;
   subTotal: number;
 }
+
+export interface DetalleOrdenRepuestoId {
+  idOrdenTrabajo: number;
+  idRepuesto: number;
+}
+
+export interface ResumenRepuestosPorOrdenDTO {
+  idOrdenTrabajo: number;
+  cantidadTotal: number;
+  totalRepuestos: number;
+}
+
+export interface RepuestoMasUtilizadoDTO {
+  idRepuesto: number;
+  nombreRepuesto: string;
+  cantidadTotal: number;
+  totalRepuestos: number;
+}
+
+export interface ConsumoRepuestosClienteDTO {
+  idCliente: string;
+  nombreCliente: string;
+  cantidadTotal: number;
+  totalRepuestos: number;
+}
