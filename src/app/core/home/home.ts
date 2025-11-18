@@ -15,7 +15,7 @@ export class Home {
   }
 
   goToDefinicion() {
-    // pendiente
+    this.router.navigate(['/definicion-proyecto']);
   }
 
   goToConsultas() {

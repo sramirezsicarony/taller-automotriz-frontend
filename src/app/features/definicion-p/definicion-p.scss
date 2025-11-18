@@ -1,0 +1,79 @@
+.def-container {
+  padding: 20px;
+}
+
+/* Barra superior */
+.top-bar {
+  background-color: #222;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.top-bar-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background-color: #1976d2;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  background-color: #1258a3;
+}
+
+.def-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.content-text p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Entidades */
+.entities-section {
+  margin-top: 30px;
+}
+
+.entity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.entity-card {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  background-color: #f7f9fc;
+}

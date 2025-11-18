@@ -6,18 +6,25 @@ import { App } from './app';
 import { Home } from './core/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { Crud } from './features/crud/crud';
-
+import { Almacen } from './features/almacen/almacen';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DefinicionProyecto } from './features/definicion-p/definicion-p';
+import { AreaLaboral } from './features/area-laboral/area-laboral';
 
 @NgModule({
   declarations: [
     App,
-    Home
+    Home,
+    Almacen,
+    Crud,
+    DefinicionProyecto,
+    AreaLaboral
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    Crud
+    ReactiveFormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

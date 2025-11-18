@@ -1,0 +1,108 @@
+<div class="almacen-container">
+
+  <!-- Barra superior del CRUD de Almacén -->
+  <header class="almacen-header">
+    <h1>Gestión de Almacenes</h1>
+    <div class="header-actions">
+      <a routerLink="/" class="link-btn">Home</a>
+      <a routerLink="/crud" class="link-btn">Volver a CRUDs</a>
+    </div>
+  </header>
+
+  <main class="almacen-main">
+
+    <!-- Columna izquierda: formulario -->
+    <section class="almacen-form-card">
+      <h2 class="section-title">
+        {{ isEditing ? 'Editar Almacén' : 'Crear Almacén' }}
+      </h2>
+
+      <form [formGroup]="almacenForm" (ngSubmit)="onSubmit()" class="almacen-form">
+
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input
+            id="nombre"
+            type="text"
+            formControlName="nombre"
+            placeholder="Nombre del almacén"
+          />
+          <div class="error" *ngIf="hasError('nombre', 'required')">
+            El nombre es obligatorio.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="direccion">Dirección *</label>
+          <input
+            id="direccion"
+            type="text"
+            formControlName="direccion"
+            placeholder="Dirección del almacén"
+          />
+          <div class="error" *ngIf="hasError('direccion', 'required')">
+            La dirección es obligatoria.
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">
+            {{ isEditing ? 'Guardar cambios' : 'Crear almacén' }}
+          </button>
+
+          <button
+            type="button"
+            class="secondary-btn"
+            *ngIf="isEditing"
+            (click)="cancelEdit()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Columna derecha: tabla -->
+    <section class="almacen-table-card">
+      <h2 class="section-title">Listado de Almacenes</h2>
+
+      <div *ngIf="isLoading" class="loading-text">
+        Cargando almacenes...
+      </div>
+
+      <div *ngIf="!isLoading && almacenes.length === 0" class="empty-text">
+        No hay almacenes registrados.
+      </div>
+
+      <div class="table-wrapper" *ngIf="!isLoading && almacenes.length > 0">
+        <table class="almacen-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let almacen of almacenes">
+            <td>{{ almacen.idAlmacen }}</td>
+            <td>{{ almacen.nombre }}</td>
+            <td>{{ almacen.direccion }}</td>
+            <td>
+              <button class="table-btn edit" (click)="onEdit(almacen)">
+                Editar
+              </button>
+              <button class="table-btn delete" (click)="onDelete(almacen)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+</div>

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-crud',
-  templateUrl: './crud.html',
+  selector: 'app-definicion-p',
   standalone: false,
-  styleUrls: ['./crud.scss']
+  templateUrl: './definicion-p.html',
+  styleUrls: ['./definicion-p.scss']
 })
-export class Crud {
+export class DefinicionProyecto {
 
   constructor(private router: Router) {}
 

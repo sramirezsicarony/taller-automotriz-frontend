@@ -1,0 +1,93 @@
+<div class="area-laboral-container">
+
+  <!-- Header -->
+  <header class="area-laboral-header">
+    <h1>Gestión de Áreas Laborales</h1>
+    <div class="header-actions">
+      <a routerLink="/" class="link-btn">Home</a>
+      <a routerLink="/crud" class="link-btn">Volver a CRUDs</a>
+    </div>
+  </header>
+
+  <main class="area-laboral-main">
+
+    <!-- Formulario -->
+    <section class="area-laboral-form-card">
+      <h2 class="section-title">
+        {{ isEditing ? 'Editar Área Laboral' : 'Crear Área Laboral' }}
+      </h2>
+
+      <form [formGroup]="areaLaboralForm" (ngSubmit)="onSubmit()" class="area-laboral-form">
+
+        <div class="form-group">
+          <label for="area">Nombre del área *</label>
+          <input
+            id="area"
+            type="text"
+            formControlName="area"
+            placeholder="Ej: Mecánica General, Pintura, Electricidad"
+          />
+          <div class="error" *ngIf="hasError('area', 'required')">
+            El nombre del área es obligatorio.
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">
+            {{ isEditing ? 'Guardar cambios' : 'Crear área laboral' }}
+          </button>
+
+          <button
+            type="button"
+            class="secondary-btn"
+            *ngIf="isEditing"
+            (click)="cancelEdit()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Tabla -->
+    <section class="area-laboral-table-card">
+      <h2 class="section-title">Listado de Áreas Laborales</h2>
+
+      <div *ngIf="isLoading" class="loading-text">
+        Cargando áreas laborales...
+      </div>
+
+      <div *ngIf="!isLoading && areasLaborales.length === 0" class="empty-text">
+        No hay áreas laborales registradas.
+      </div>
+
+      <div class="table-wrapper" *ngIf="!isLoading && areasLaborales.length > 0">
+        <table class="area-laboral-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Área</th>
+            <th>Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let area of areasLaborales">
+            <td>{{ area.idAreaLaboral }}</td>
+            <td>{{ area.area }}</td>
+            <td>
+              <button class="table-btn edit" (click)="onEdit(area)">
+                Editar
+              </button>
+              <button class="table-btn delete" (click)="onDelete(area)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+</div>
