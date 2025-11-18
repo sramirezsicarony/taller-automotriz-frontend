@@ -1,0 +1,34 @@
+<div class="home-container">
+  <div class="home-card">
+    <h1 class="home-title">Home Page</h1>
+
+    <div class="home-actions">
+      <button class="home-btn" (click)="goToCrud()">
+        CRUDs
+      </button>
+
+      <button class="home-btn" (click)="showDefinition()">
+        Definición Proyecto
+      </button>
+
+      <button class="home-btn" (click)="goToConsultas()">
+        Consultas
+      </button>
+    </div>
+
+    <!-- Tarjeta de definición del proyecto -->
+    <div class="home-definition" *ngIf="selectedSection === 'definition'">
+      <h2>Definición del proyecto</h2>
+      <p>
+        Sistema de gestión para el taller automotriz <strong>MotorPlus</strong>,
+        que permite administrar clientes, vehículos, órdenes de trabajo,
+        mecánicos, repuestos, proveedores y facturación, así como realizar
+        consultas y reportes sobre el funcionamiento del taller.
+      </p>
+      <p>
+        Desde esta aplicación podrás acceder a todos los CRUDs y a las consultas
+        propuestas en el enunciado del proyecto.
+      </p>
+    </div>
+  </div>
+</div>
