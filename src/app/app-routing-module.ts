@@ -1,26 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Home } from './core/home/home'; // 👈 ojo a esto
+import { Home } from './core/home/home';
+import {Crud} from './features/crud/crud';
 
 const routes: Routes = [
   {
     path: '',
-    component: Home, // Ruta principal /
+    component: Home,
   },
-  {
-    path: 'crud',
-    loadChildren: () =>
-      import('./features/crud/crud').then(m => m.Crud)
-  },
-  {
-    path: 'consultas',
-    loadChildren: () =>
-      import('./features/consultas/consultas').then(m => m.Consultas)
-  },
+
+  {path: 'crud', component: Crud},
   {
     path: '**',
-    redirectTo: '', // Cualquier ruta desconocida → Home
-  }
+    redirectTo: '',
+    pathMatch: 'full'
+  },
+
+
 ];
 
 @NgModule({

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Home } from './core/home/home';
 import { HttpClientModule } from '@angular/common/http';
+import { Crud } from './features/crud/crud';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Crud
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

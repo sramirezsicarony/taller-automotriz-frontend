@@ -1,1 +1,130 @@
-<p>crud works!</p>
+<div class="cruds-container">
+
+  <!-- Barra superior de navegación -->
+  <header class="top-bar">
+    <div class="top-bar-content">
+      <button class="nav-btn" (click)="navigateTo('/crud')">CRUDs</button>
+      <button class="nav-btn" (click)="navigateTo('/home')">Home page</button>
+      <button class="nav-btn" (click)="navigateTo('/consultas')">Consultas</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="cruds-main">
+    <h1 class="title">CRUDs para las entidades actuales</h1>
+    <h2 class="subtitle">De Click sobre la entidad que desea usar</h2>
+
+    <!-- Matriz de botones (3 columnas en desktop) -->
+    <section class="entity-grid">
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/almacen')">
+        Almacen
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/area-laboral')">
+        AreaLaboral
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/area-trabajos')">
+        AreaTrabajos
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/area-trabajos-id')">
+        AreaTrabajosId
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/bodega')">
+        Bodega
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/bodega-id')">
+        BodegaId
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/categoria-repuesto')">
+        CategoriaRepuesto
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/cliente')">
+        Cliente
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/detalle-orden-repuesto')">
+        DetalleOrdenRepuesto
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/detalle-orden-repuesto-id')">
+        DetalleOrdenRepuestoId
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/especialidad')">
+        Especialidad
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/estado-factura')">
+        EstadoFactura
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/estado-orden')">
+        EstadoOrden
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/factura')">
+        Factura
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/mecanico')">
+        Mecanico
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/orden-trabajo')">
+        OrdenTrabajo
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/orden-trabajo-mecanico')">
+        OrdenTrabajoMecanico
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/orden-trabajo-mecanico-id')">
+        OrdenTrabajoMecanicoId
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/proveedor')">
+        Proveedor
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/repuesto')">
+        Repuesto
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/rol')">
+        Rol
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/servicio')">
+        Servicio
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/suministra')">
+        Suministra
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/suministra-id')">
+        SuministraId
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/tipo-vehiculo')">
+        TipoVehiculo
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/vehiculo')">
+        Vehiculo
+      </button>
+
+      <button class="entity-btn" (click)="navigateTo('/cruds/vehiculo-servicio-orden-trabajo')">
+        VehiculoServicioOrdenTrabajo
+      </button>
+
+    </section>
+  </main>
+</div>
